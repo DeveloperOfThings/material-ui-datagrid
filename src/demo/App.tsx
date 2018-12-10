@@ -1,22 +1,31 @@
-import * as React from 'react';
-import './App.css';
+import { Theme } from "@material-ui/core/styles/createMuiTheme";
+import createStyles from "@material-ui/core/styles/createStyles";
+import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 
-import logo from './logo.svg';
+import * as React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
-class App extends React.Component {
+import Layout from "./Layout";
+import withRoot from "./withRoot";
+
+const styles = (theme: Theme) =>
+  createStyles({
+    root: {
+      paddingTop: theme.spacing.unit * 20,
+      textAlign: "center"
+    }
+  });
+
+// interface IState {}
+
+class App extends React.Component<WithStyles<typeof styles>> {
   public render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <Layout />
+      </Router>
     );
   }
 }
 
-export default App;
+export default withRoot(withStyles(styles)(App));
