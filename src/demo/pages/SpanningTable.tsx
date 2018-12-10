@@ -4,9 +4,10 @@ import {
   withStyles,
   WithStyles
 } from "@material-ui/core/styles";
-import DataGrid from "../../lib/DataGrid";
 
 import * as React from "react";
+import { IDataGridColumns } from '../../index';
+import DataGrid from "../../lib/DataGrid";
 
 // const TAX_RATE = 0.07;
 

@@ -17,6 +17,7 @@ import FilterListIcon from "@material-ui/icons/FilterList";
 import Search from "@material-ui/icons/Search";
 import classNames from "classnames";
 import * as React from "react";
+import { IMapLike } from '../index';
 
 const styles = ({ palette, spacing }: Theme) =>
   createStyles({
@@ -58,7 +59,7 @@ interface IProps extends WithStyles<typeof styles> {
   title: string;
 }
 
-interface IState extends MapLike<any> {
+interface IState extends IMapLike<any> {
   query: string;
   searchTimeoutId?: number;
 }

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { IDataGridColumns, IMapLike } from '../../index';
 import DataGrid, { PaginationState } from "../../lib/DataGrid";
 
 const SEARCH = "//api.github.com/search/repositories";
@@ -68,7 +69,7 @@ export default class GithubRepositoryTable extends React.Component<IProps, IStat
     this.setState({ items });
   };
 
-  private handleClick = ({ id }: MapLike<any>) => {
+  private handleClick = ({ id }: IMapLike<any>) => {
     // const { history } = this.props;
     // history.push(`accounts/${id}`);
   };

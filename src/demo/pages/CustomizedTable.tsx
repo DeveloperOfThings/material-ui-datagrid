@@ -6,7 +6,8 @@ import {
 } from "@material-ui/core/styles";
 
 import * as React from "react";
-import DataGrid from "src/lib/DataGrid";
+import { IDataGridColumns } from '../../index';
+import DataGrid from "../../lib/DataGrid";
 
 const styles = (theme: Theme) =>
   createStyles({

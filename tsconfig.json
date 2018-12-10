@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "build/dist",
+    "declaration": true,
+    "outDir": "build",
     "module": "esnext",
     "target": "es5",
     "lib": ["es2018", "dom"],
     "sourceMap": true,
-    "allowJs": true,
+    "allowJs": false,
     "jsx": "react",
     "moduleResolution": "node",
     "rootDir": "src",

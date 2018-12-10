@@ -5,6 +5,7 @@ import TableRow from "@material-ui/core/TableRow";
 import TableSortLabel from "@material-ui/core/TableSortLabel";
 import Tooltip from "@material-ui/core/Tooltip";
 import * as React from "react";
+import { IDataGridColumns } from '../index';
 
 interface IProps {
   columns: IDataGridColumns[];

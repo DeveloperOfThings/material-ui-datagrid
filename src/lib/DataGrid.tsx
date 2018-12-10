@@ -16,6 +16,7 @@ import TablePagination, {
 import TableRow from "@material-ui/core/TableRow";
 import * as React from "react";
 
+import { IDataGridColumns, IMapLike } from '../index';
 import DataGridHead from "./DataGridHead";
 import DataGridToolbar from "./DataGridToolbar";
 
@@ -60,7 +61,7 @@ interface IProps extends WithStyles<typeof styles> {
       ...paginationState
     }: PaginationState
   ) => void;
-  onRowSelect?: (selectedRow: MapLike<any>) => void;
+  onRowSelect?: (selectedRow: IMapLike<any>) => void;
   onSearch?: (query: string) => void;
   onSortingChange?: (
     {
@@ -72,7 +73,7 @@ interface IProps extends WithStyles<typeof styles> {
   pagination?: boolean;
   pageSize?: number;
   remote?: boolean;
-  rows: Array<MapLike<any>>;
+  rows: Array<IMapLike<any>>;
   rowsPerPageOptions?: number[];
   searchable?: boolean;
   selectable?: boolean;
@@ -82,13 +83,13 @@ interface IProps extends WithStyles<typeof styles> {
 }
 
 interface IState {
-  data: Array<MapLike<any>>;
-  filteredData?: Array<MapLike<any>>;
+  data: Array<IMapLike<any>>;
+  filteredData?: Array<IMapLike<any>>;
   order: "asc" | "desc" | undefined;
   orderBy: string;
   page: number;
-  paginatedData?: Array<MapLike<any>>;
-  rows: Array<MapLike<any>>;
+  paginatedData?: Array<IMapLike<any>>;
+  rows: Array<IMapLike<any>>;
   rowsPerPage: number;
   selected: Array<number | string>;
 }
@@ -140,7 +141,7 @@ class DataGrid extends React.Component<IProps, IState> {
     let data;
     if (nestedKey) {
       data = rows.map(row => {
-        const trow: MapLike<any> = { [key]: row[key] };
+        const trow: IMapLike<any> = { [key]: row[key] };
         for (const tcol of columns) {
           trow[tcol.id] = tcol.id.split(".").reduce((o, i) => o[i], row);
         }
@@ -320,7 +321,7 @@ class DataGrid extends React.Component<IProps, IState> {
     );
   }
 
-  private createRowClickHandler = (selectedRow: MapLike<any>) => (
+  private createRowClickHandler = (selectedRow: IMapLike<any>) => (
     event: React.MouseEvent<HTMLTableRowElement>
   ) => {
     const { key = "id", selectable } = this.props;

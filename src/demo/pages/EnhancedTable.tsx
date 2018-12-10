@@ -6,6 +6,7 @@ import {
 } from "@material-ui/core/styles";
 
 import * as React from "react";
+import { IDataGridColumns, IMapLike } from '../../index';
 import DataGrid, { PaginationState } from "../../lib/DataGrid";
 
 let counter = 0;
@@ -111,7 +112,7 @@ class EnhancedTable extends React.Component<IProps> {
     this.setState({ order, orderBy });
   };
 
-  private handleRowSelect = ({ id }: MapLike<any>) => {
+  private handleRowSelect = ({ id }: IMapLike<any>) => {
     this.setState({ selected: [id] });
   };
 }
