@@ -21,6 +21,7 @@ src
 scripts
 config
 demo
+build
 .travis.yml
 CHANGELOG.md
 README.md

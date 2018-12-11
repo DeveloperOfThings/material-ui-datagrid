@@ -1,4 +1,4 @@
-export { default as DataGrid, PaginationState } from "./lib/DataGrid";
+export { default as DataGrid, PaginationState } from "./DataGrid";
 
 export interface IDataGridColumns {
   disablePadding?: boolean;

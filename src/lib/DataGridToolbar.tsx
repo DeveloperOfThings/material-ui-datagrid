@@ -17,7 +17,8 @@ import FilterListIcon from "@material-ui/icons/FilterList";
 import Search from "@material-ui/icons/Search";
 import classNames from "classnames";
 import * as React from "react";
-import { IMapLike } from '../index';
+
+import { IMapLike } from './index';
 
 const styles = ({ palette, spacing }: Theme) =>
   createStyles({

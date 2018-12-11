@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IDataGridColumns, IMapLike } from '../../index';
+import { IDataGridColumns, IMapLike } from '../../lib';
 import DataGrid, { PaginationState } from "../../lib/DataGrid";
 
 const SEARCH = "//api.github.com/search/repositories";

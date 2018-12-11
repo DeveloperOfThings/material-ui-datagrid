@@ -10,15 +10,14 @@ import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableFooter from "@material-ui/core/TableFooter";
-import TablePagination, {
-  TablePaginationBaseProps
-} from "@material-ui/core/TablePagination";
+import TablePagination from "@material-ui/core/TablePagination";
+import { TablePaginationActionsProps } from '@material-ui/core/TablePagination/TablePaginationActions';
 import TableRow from "@material-ui/core/TableRow";
 import * as React from "react";
 
-import { IDataGridColumns, IMapLike } from '../index';
 import DataGridHead from "./DataGridHead";
 import DataGridToolbar from "./DataGridToolbar";
+import { IDataGridColumns, IMapLike } from './index';
 
 // Theme-dependent styles
 const styles = ({ spacing }: Theme) =>
@@ -42,7 +41,7 @@ export type PaginationState = Pick<
 
 interface IProps extends WithStyles<typeof styles> {
   columns: IDataGridColumns[];
-  DataGridActionsComponent?: React.ReactType<TablePaginationBaseProps>;
+  DataGridActionsComponent?: React.ReactType<TablePaginationActionsProps>;
   filterable?: boolean;
   key?: string | number;
   loading?: boolean;

@@ -58,7 +58,7 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: shouldUseSourceMap ? 'source-map' : false,
   // In production, we only want to load the polyfills and the app code.
-  entry: [require.resolve('./polyfills'), paths.appLibIndexJs], // CRL: library index file instead of app index
+  entry: [require.resolve('./polyfills'), paths.appIndexJs],
   output: {
     // The build folder.
     path: paths.appBuild,
@@ -128,7 +128,7 @@ module.exports = {
         test: /\.(js|jsx|mjs)$/,
         loader: require.resolve('source-map-loader'),
         enforce: 'pre',
-        include: paths.appLibSrc,
+        include: paths.appSrc,
       },
       {
         // "oneOf" will traverse all following loaders until one will
@@ -147,7 +147,7 @@ module.exports = {
           },
           {
             test: /\.(js|jsx|mjs)$/,
-            include: paths.appLibSrc,
+            include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
               
@@ -370,11 +370,6 @@ module.exports = {
       tslint: paths.appTsLint,
     }),
   ],
-  // CRL: added externals block for library
-  externals: {
-   'react': 'react',
-   'react-dom': 'react-dom'
-  },
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
   node: {
